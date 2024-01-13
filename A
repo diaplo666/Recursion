@@ -1,0 +1,11 @@
+FUNCTION isPalindrome(word: STRING) RETURNS BOOLEAN
+    IF LENGTH(word) <= 1 THEN
+        RETURN TRUE
+    END_IF
+
+    IF FIRST_CHARACTER(word) = LAST_CHARACTER(word) THEN
+        RETURN isPalindrome(SUBSTRING(word, 2, LENGTH(word) - 2))
+    ELSE
+        RETURN FALSE
+    END_IF
+END_FUNCTION
